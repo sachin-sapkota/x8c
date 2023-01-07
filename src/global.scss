@@ -1,0 +1,265 @@
+$bgPrimary: black;
+$primaryColor: #ff006c;
+$textPrimary: white;
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.transition {
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-duration: 0.5s;
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $bgPrimary;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $primaryColor;
+        border-radius: 3px;
+    }
+}
+
+#root {
+    background: $bgPrimary;
+    overflow: hidden;
+    font-family: 'Power Grotesk', sans-serif;
+    letter-spacing: 1px;
+    color: $textPrimary;
+}
+
+.hide-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #3e3e3e;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $primaryColor;
+        border-radius: 3px;
+    }
+
+    &-horizontal {
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+    }
+}
+
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+
+    &.light {
+        color: white;
+        border: 1px solid white;
+    }
+
+    &.dark {
+        color: black;
+        border: 1px solid black;
+    }
+
+    &.pink {
+        color: #ff006c;
+        border: 1px solid #ff006c;
+    }
+
+    &:hover:not(:disabled) {
+        &.light {
+            color: black;
+            background: white;
+
+            svg {
+                path,
+                line {
+                    stroke: black;
+                }
+            }
+        }
+
+        &.pink {
+            background: #ff006c;
+            color: white;
+
+            svg {
+                path,
+                line {
+                    stroke: white;
+                }
+            }
+        }
+
+        &.dark {
+            color: white;
+            background: black;
+
+            svg {
+                path,
+                line {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+}
+
+.custom-input {
+    background: transparent;
+    border-bottom: 2px solid #ffffff80;
+    outline: none;
+    color: #848688;
+    font: unset;
+    height: 40px;
+    padding: 0 0.5rem 1rem 0.5rem;
+    width: 100%;
+
+    &:focus {
+        color: white;
+        border-bottom: 2px solid white;
+    }
+}
+
+*.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.mouse-area {
+    .indicator {
+        opacity: 0;
+    }
+    &:hover {
+        .indicator {
+            opacity: 1;
+        }
+    }
+}
+
+.mask-vertical {
+    mask-image: linear-gradient(0deg, transparent 0%, black 100px);
+}
+
+.mask-vertical-mobile {
+    mask-image: linear-gradient(0deg, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.mask-vertical-1 {
+    mask-image: linear-gradient(
+        0deg,
+        transparent 0%,
+        #0000002b 10%,
+        #000000b0 30%,
+        #000000b5 70%,
+        #0000002e 90%,
+        transparent 100%
+    );
+}
+
+.mask-vertical-2 {
+    mask-image: linear-gradient(0deg, transparent 0%, black 350px);
+}
+
+.mask-vertical-3 {
+    mask-image: linear-gradient(180deg, transparent 0%, black 100px);
+}
+
+.mask-vertical-4 {
+    mask-image: linear-gradient(180deg, transparent 0%, black 50px);
+}
+
+.mask-horizontal {
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.mask-horizontal-1 {
+    mask-image: linear-gradient(90deg, transparent 0%, black 60px, black 90%, transparent 100%);
+}
+
+.box-shadow-pink {
+    box-shadow: 0px 0px 16px $primaryColor;
+}
+
+.text-shadow-pink {
+    text-shadow: 0 0 30px $primaryColor;
+}
+
+.black-screen {
+    width: calc(100% - 450px);
+}
+
+.menu-over {
+    position: relative;
+
+    div.sub-menu-wrapper {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: 0.5s all cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    > a,
+    > svg {
+        transition: 0.5s all cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    &:hover {
+        div.sub-menu-wrapper {
+            opacity: 1;
+            max-height: 300px;
+        }
+
+        > a {
+            color: #ff006c;
+        }
+
+        > svg {
+            stroke: #ff006c;
+        }
+    }
+}
+
+.custom-select-option {
+    &:hover {
+        svg {
+            path,
+            line {
+                stroke: #ff006c;
+            }
+        }
+    }
+}
